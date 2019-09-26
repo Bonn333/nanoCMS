@@ -84,14 +84,14 @@
 						if (!isset($_GET['entry'])) {
 							if (count($blog->entry) <= $blog->blog_entries_per_page) {
 								for ($i=count($blog->entry)-1; $i>=0; $i--) {
-									print("<h1><a href=\"index.php?id=blog&entry=".$i."\">".$blog->name[$i]."</a></h1>");
+									print("<h1><a href=\"blog&entry=".$i."\">".$blog->name[$i]."</a></h1>");
 									print("<b>Author</b>: ".$blog->author[$i].", <b>date</b>: ".$blog->date[$i]."<br><br>");
 									if (file_exists("entries/".$blog->entry[$i].".html")) {
 										$entry = fopen("entries/".$blog->entry[$i].".html", "r");
 										while ($entry_line = @fgets($entry, 1024)) {
 											print($entry_line);
 										}
-										print("<br><br><a href=\"index.php?id=blog&entry=".$i."#disqus_thread\">Click to comment entry</a><br><hr>");
+										print("<br><br><a href=\"blog&entry=".$i."#disqus_thread\">Click to comment entry</a><br><hr>");
 										fclose($entry);
 									}
 									else {
@@ -110,14 +110,14 @@
 									if ($i < 0) {
 										break;
 									}
-									print("<h1><a href=\"index.php?id=blog&entry=".$i."\">".$blog->name[$i]."</a></h1>");
+									print("<h1><a href=\"blog&entry=".$i."\">".$blog->name[$i]."</a></h1>");
 									print("<b>Author</b>: ".$blog->author[$i].", <b>date</b>: ".$blog->date[$i]."<br><br>");
 									if (file_exists("entries/".$blog->entry[$i].".html")) {
 										$entry = fopen("entries/".$blog->entry[$i].".html", "r");
 										while ($entry_line = @fgets($entry, 1024)) {
 											print($entry_line);
 										}
-										print("<br><br><a href=\"index.php?id=blog&entry=".$i."#disqus_thread\">Click to comment entry</a><br><hr>");
+										print("<br><br><a href=\"blog&entry=".$i."#disqus_thread\">Click to comment entry</a><br><hr>");
 										fclose($entry);
 									}
 									else {
@@ -133,7 +133,7 @@
 									}
 									else
 									{
-										print(" <a href=\"index.php?id=blog&page=".$j."\">".$j."</a> ");
+										print(" <a href=\"blog&page=".$j."\">".$j."</a> ");
 									}
 								}
 							}

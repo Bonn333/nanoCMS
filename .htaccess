@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^id=([^&\s]+)$
+RewriteRule ^(?:index\.php|)$ /%1? [R=301,L]
+
+RewriteCond %{QUERY_STRING} ^id=([^&\s]+)$
+RewriteRule ^(?:index\.php|)$ /%1/%2? [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\s\/]+)/?$ index.php?id=$1&r [L,QSA]
+
+RewriteEngine On
+RewriteBase /nanoCMS
+
+
