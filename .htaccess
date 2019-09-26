@@ -9,7 +9,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^\s\/]+)/?$ index.php?id=$1&r [L,QSA]
 
-RewriteEngine On
-RewriteBase /nanoCMS
-
 
